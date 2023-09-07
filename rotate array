@@ -1,0 +1,28 @@
+
+# i used a simple formula to rotate the array 
+#     newindex=(i+k)%n
+#     newarr[newindex]=arr[i]            //   T H I S I S I M P O R T A N T
+
+# Input: nums = [-1,-100,3,99], k = 2
+# Output: [3,99,-1,-100]
+# Explanation: 
+# rotate 1 steps to the right: [99,-1,-100,3]
+# rotate 2 steps to the right: [3,99,-1,-100]
+
+
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int n = nums.length;
+        int[] newarr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            int ni = (i + k) % n;
+            newarr[ni] = nums[i];
+        }
+
+        System.arraycopy(newarr, 0, nums, 0, n);
+        System.out.println(Arrays.toString(nums));
+    }
+}
+
+# let us see anti-clocwise in next repositry
